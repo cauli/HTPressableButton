@@ -21,12 +21,14 @@
  @param shadowHeight the height of the shadow
  @param shadowColor The background color of the shadow
  @param cornerRadius The corner radius of the button
+ @param glow If we should apply a triangular glow to the button
  */
 + (UIImage *) ht_buttonWithColor: (UIColor *) buttonColor
                             size: (CGSize) size
                     shadowHeight: (CGFloat) shadowHeight
                      shadowColor: (UIColor *) shadowColor
-                    cornerRadius: (CGFloat) cornerRadius;
+                    cornerRadius: (CGFloat) cornerRadius
+                            glow: (BOOL) glow;
 
 /**
  Create a composite image to be used as the highlighted state of a button
@@ -35,12 +37,14 @@
  @param shadowHeight the height of the shadow
  @param shadowColor The background color of the shadow
  @param cornerRadius The corner radius of the button
+ @param glow If we should apply a triangular glow to the button
  */
 + (UIImage *) ht_buttonWithHighlightedColor: (UIColor *) buttonColor
                                        size: (CGSize) size
                                shadowHeight: (CGFloat) shadowHeight
                                 shadowColor: (UIColor *) shadowColor
-                               cornerRadius: (CGFloat) cornerRadius;
+                               cornerRadius: (CGFloat) cornerRadius
+                                        glow: (BOOL) glow;
 
 /**
  Create a composite circular image to be used as the button background

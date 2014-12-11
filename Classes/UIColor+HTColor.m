@@ -248,4 +248,106 @@
     return UIColorFromRGB(0x00b0d6);
 }
 
+#pragma mark - Cauli color schemes
++ (UIColor *) ht_cyanColor
+{
+    return UIColorFromRGB(0x59c8dd);
+}
+
++ (UIColor *) ht_cyanDarkColor
+{
+    return UIColorFromRGB(0x4ba6b8);
+}
+
++ (UIColor *) ht_deepBlueColor
+{
+    return UIColorFromRGB(0x437fd2);
+}
+
++ (UIColor *) ht_deepBlueDarkColor
+{
+    return UIColorFromRGB(0x40679d);
+}
+
++ (UIColor *) ht_bubblegumColor
+{
+    return UIColorFromRGB(0xef5282);
+}
+
++ (UIColor *) ht_bubblegumDarkColor
+{
+    return UIColorFromRGB(0xb23b62);
+}
+
++ (UIColor *) ht_crocodileColor
+{
+    return UIColorFromRGB(0x5dc089);
+}
+
++ (UIColor *) ht_crocodileDarkColor
+{
+    return UIColorFromRGB(0x1c705b);
+}
+
++ (UIColor *) ht_skyBlueColor
+{
+    return UIColorFromRGB(0x77bfef);
+}
+
++ (UIColor *) ht_skyBlueDarkColor
+{
+    return UIColorFromRGB(0x5d91b0);
+}
+
++ (UIColor *) ht_grapeColor
+{
+    return UIColorFromRGB(0x9e66b1);
+}
+
++ (UIColor *) ht_grapeDarkColor
+{
+    return UIColorFromRGB(0x80518b);
+}
+
++ (UIColor *) ht_coralColor
+{
+    return UIColorFromRGB(0xe98181);
+}
+
++ (UIColor *) ht_coralDarkColor
+{
+    return UIColorFromRGB(0xCB7A7A);
+}
+
++ (UIColor *) ht_lightGreenColor
+{
+    return UIColorFromRGB(0x75c570);
+}
+
++ (UIColor *) ht_lightGreenDarkColor
+{
+    return UIColorFromRGB(0x569354);
+}
+
++ (UIColor *) ht_goldenColor
+{
+    return UIColorFromRGB(0x7DAC3D);
+}
+
++ (UIColor *) ht_goldenDarkColor
+{
+    return UIColorFromRGB(0x916624);
+}
+
++ (UIColor *) ht_mediumGreyColor
+{
+    return UIColorFromRGB(0x89939F);
+}
+
++ (UIColor *) ht_mediumGreyDarkColor
+{
+    return UIColorFromRGB(0x7C858D);
+}
+
+
 @end

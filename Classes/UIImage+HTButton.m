@@ -16,11 +16,22 @@
                     shadowHeight: (CGFloat) shadowHeight
                      shadowColor: (UIColor *) shadowColor
                     cornerRadius: (CGFloat) cornerRadius
+                            glow: (BOOL) glow
 {
+    UIImage *frontImage;
     UIImage *buttonImage;
     
-    //button color
-    UIImage *frontImage = [UIImage ht_imageWithColor:buttonColor size:size cornerRadius:cornerRadius];
+    // Sets the button color
+    if(glow)
+    {
+        // With glow
+        frontImage = [UIImage ht_imageWithColor_glowing:buttonColor size:size cornerRadius:cornerRadius];
+    }
+    else
+    {
+        frontImage = [UIImage ht_imageWithColor:buttonColor size:size cornerRadius:cornerRadius];
+    }
+    
     //button's shadow color
     UIImage *backImage = [UIImage ht_imageWithColor:shadowColor size:size cornerRadius:cornerRadius];
 
@@ -41,10 +52,25 @@
                                shadowHeight: (CGFloat) shadowHeight
                                 shadowColor: (UIColor *) shadowColor
                                cornerRadius: (CGFloat) cornerRadius
+                                       glow: (BOOL) glow
 {
     UIImage *buttonHighlightedImage;
     
-    UIImage *frontImage = [UIImage ht_imageWithColor:buttonColor size:size cornerRadius:cornerRadius];
+
+    UIImage *frontImage;
+    
+    // Sets the button color
+    if(glow)
+    {
+        // With glow
+        frontImage = [UIImage ht_imageWithColor_glowing:buttonColor size:size cornerRadius:cornerRadius];
+    }
+    else
+    {
+        frontImage = [UIImage ht_imageWithColor:buttonColor size:size cornerRadius:cornerRadius];
+    }
+    
+    
     UIImage *backImage = [UIImage ht_imageWithColor:shadowColor size:size cornerRadius:cornerRadius];
     
     CGRect rect = CGRectMake(0, 0, frontImage.size.width, frontImage.size.height + shadowHeight);
@@ -58,7 +84,6 @@
     UIGraphicsEndImageContext();
     
     return buttonHighlightedImage;
-    
 }
 
 + (UIImage *) ht_circularButtonWithColor: (UIColor *) buttonColor
@@ -143,5 +168,44 @@
     
     return imageView.image;
 }
+
++ (UIImage *) ht_imageWithColor_glowing: (UIColor *) color
+                                   size: (CGSize) size
+                           cornerRadius: (CGFloat) cornerRadius
+{
+    //Draw the image according to the size and color
+    CGRect rect = CGRectMake(0, 0, size.width, size.height);
+    UIGraphicsBeginImageContextWithOptions(rect.size, NO, 0);
+    CGContextRef context = UIGraphicsGetCurrentContext();
+    
+    CGContextSetFillColorWithColor(context, [color CGColor]);
+    CGContextFillRect(context, rect);
+    
+    CGContextBeginPath(context);
+    CGContextMoveToPoint   (context, CGRectGetMinX(rect), CGRectGetMinY(rect));  // top left
+    CGContextAddLineToPoint(context, CGRectGetMaxX(rect), CGRectGetMinY(rect));  // top right
+    CGContextAddLineToPoint(context, CGRectGetMinX(rect), CGRectGetMaxY(rect));  // bottom left
+    CGContextClosePath(context);
+    
+    CGContextSetRGBFillColor(context, 1, 1, 1, 0.15);
+    CGContextFillPath(context);
+    
+    UIImage *image = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+    
+    //Round the image above according to cornerRadius
+    UIImageView *imageView = [[UIImageView alloc] initWithImage:image];
+    
+    UIGraphicsBeginImageContextWithOptions(imageView.bounds.size, NO, 0);
+    [[UIBezierPath bezierPathWithRoundedRect:imageView.bounds
+                                cornerRadius:cornerRadius] addClip];
+    [image drawInRect:imageView.bounds];
+    imageView.image = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+    
+    return imageView.image;
+}
+
+
 
 @end

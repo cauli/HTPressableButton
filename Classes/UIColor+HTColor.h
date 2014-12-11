@@ -16,6 +16,7 @@
 
 @interface UIColor (HTColor)
 
+
 #pragma mark - Designmodo color schemes
 + (UIColor *) ht_turquoiseColor;
 + (UIColor *) ht_greenSeaColor;
@@ -67,5 +68,25 @@
 #pragma mark - Tandavas color schemes
 + (UIColor *) ht_jayColor;
 + (UIColor *) ht_jayDarkColor;
+
+#pragma mark - Cauli color schemes
++ (UIColor *) ht_cyanColor;
++ (UIColor *) ht_cyanDarkColor;
++ (UIColor *) ht_deepBlueColor;
++ (UIColor *) ht_deepBlueDarkColor;
++ (UIColor *) ht_bubblegumColor;
++ (UIColor *) ht_bubblegumDarkColor;
++ (UIColor *) ht_skyBlueColor;
++ (UIColor *) ht_skyBlueDarkColor;
++ (UIColor *) ht_grapeColor;
++ (UIColor *) ht_grapeDarkColor;
++ (UIColor *) ht_coralColor;
++ (UIColor *) ht_coralDarkColor;
++ (UIColor *) ht_lightGreenColor;
++ (UIColor *) ht_lightGreenDarkColor;
++ (UIColor *) ht_goldenColor;
++ (UIColor *) ht_goldenDarkColor;
++ (UIColor *) ht_mediumGreyColor;
++ (UIColor *) ht_mediumGreyDarkColor;
 
 @end

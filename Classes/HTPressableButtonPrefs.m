@@ -12,3 +12,5 @@ const CGFloat HTShadowDefaultHeightPercentage = 0.17;
 //60% from default shadow height
 const CGFloat HTShadowCircularDefaultHeightPercentage = HTShadowDefaultHeightPercentage * 0.6;
 const CGFloat HTShadowOffsetWhenPressed = 0.7;
+const CGFloat HTImageOffsetWhenPressed = 1.4;
+const BOOL SET_TEXT_SHADOW_COLOR_TO_SHADOW_COLOR = YES;

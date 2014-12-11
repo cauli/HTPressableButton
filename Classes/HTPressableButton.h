@@ -9,8 +9,8 @@
 #import <UIKit/UIKit.h>
 
 typedef NS_ENUM(NSInteger, HTPressableButtonStyle) {
-    HTPressableButtonStyleRect,
     HTPressableButtonStyleRounded,
+    HTPressableButtonStyleRect,
     HTPressableButtonStyleCircular
 };
 
@@ -28,6 +28,11 @@ typedef NS_ENUM(NSInteger, HTPressableButtonStyle) {
  The color of the button
  */
 @property(nonatomic, strong, readwrite) UIColor *buttonColor UI_APPEARANCE_SELECTOR;
+
+/**
+ The background color of the button on the storyboard
+ */
+@property(nonatomic, strong, readwrite) UIColor *originalButtonColor UI_APPEARANCE_SELECTOR;
 
 /**
  The color of the shadow
@@ -53,6 +58,27 @@ typedef NS_ENUM(NSInteger, HTPressableButtonStyle) {
  The color of the shadow when disabled
  */
 @property(nonatomic, strong, readwrite) UIColor *disabledShadowColor UI_APPEARANCE_SELECTOR;
+
+/**
+ The colorp pallete from HTColor to use
+ */
+@property(nonatomic, strong, readwrite) NSString *colorPalette UI_APPEARANCE_SELECTOR;
+
+/**
+ Should the button have a highlight?
+*/
+@property(nonatomic) BOOL glow UI_APPEARANCE_SELECTOR;
+
+/**
+ Buffer for the image UIEdgeInsets grabbed from the storyboard
+ */
+@property(nonatomic) UIEdgeInsets myImageInsets UI_APPEARANCE_SELECTOR;
+
+
+/**
+ Buffer for the text UIEdgeInsets grabbed from the storyboard
+ */
+@property(nonatomic) UIEdgeInsets myTitleInsets UI_APPEARANCE_SELECTOR;
 
 
 /**
@@ -109,6 +135,12 @@ typedef NS_ENUM(NSInteger, HTPressableButtonStyle) {
  @param disabledShadowColor The fill color to be used by the shadow
  */
 - (void) setDisabledShadowColor:(UIColor *)disabledShadowColor;
+
+/**
+ Automatically sets the glow to the buttons
+ */
+- (BOOL) glowOrDefault;
+
 
 /**
  Set the button style
