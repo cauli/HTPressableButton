@@ -311,7 +311,7 @@
 
 + (UIColor *) ht_coralColor
 {
-    return UIColorFromRGB(0xe98181);
+    return UIColorFromRGB(0xfe7b7d);
 }
 
 + (UIColor *) ht_coralDarkColor
@@ -331,7 +331,7 @@
 
 + (UIColor *) ht_goldenColor
 {
-    return UIColorFromRGB(0x7DAC3D);
+    return UIColorFromRGB(0xF4B450);
 }
 
 + (UIColor *) ht_goldenDarkColor
@@ -348,6 +348,119 @@
 {
     return UIColorFromRGB(0x7C858D);
 }
+
++ (UIColor *) ht_heartColor
+{
+    return UIColorFromRGB(0xE587A2);
+}
+
++ (UIColor *) ht_heartDarkColor
+{
+    return UIColorFromRGB(0xBF7B91);
+}
+
++ (UIColor *) ht_burntOrangeColor
+{
+    return UIColorFromRGB(0xD8783E);
+}
+
++ (UIColor *) ht_burntOrangeDarkColor
+{
+    return UIColorFromRGB(0x844925);
+}
+
++ (UIColor *) ht_magentaColor
+{
+    return UIColorFromRGB(0xB43A80);
+}
+
++ (UIColor *) ht_magentaDarkColor
+{
+    return UIColorFromRGB(0x8F2C66);
+}
+
++ (UIColor *) ht_rosyColor
+{
+    return UIColorFromRGB(0xE98181);
+}
+
++ (UIColor *) ht_rosyDarkColor
+{
+    return UIColorFromRGB(0xCB7A7A);
+}
+
++ (UIColor *) ht_dirtyGreyColor
+{
+    return UIColorFromRGB(0x5B5850);
+}
+
++ (UIColor *) ht_dirtyGreyDarkColor
+{
+    return UIColorFromRGB(0x4C473E);
+}
+
++ (UIColor *) ht_mintyColor
+{
+    return UIColorFromRGB(0x48C2C5);
+}
+
++ (UIColor *) ht_mintyDarkColor
+{
+    return UIColorFromRGB(0x339396);
+}
+
++ (UIColor *) ht_orangeColor
+{
+    return UIColorFromRGB(0xEA810F);
+}
+
++ (UIColor *) ht_orangeDarkColor
+{
+    return UIColorFromRGB(0xA9621D);
+}
+
++ (UIColor *) ht_deathGreenColor
+{
+    return UIColorFromRGB(0x4D8B95);
+}
+
++ (UIColor *) ht_deathGreenDarkColor
+{
+    return UIColorFromRGB(0x284D52);
+}
+
++ (UIColor *) ht_twitterColor
+{
+    return UIColorFromRGB(0x4ABDD4);
+}
+
++ (UIColor *) ht_twitterDarkColor
+{
+    return UIColorFromRGB(0x3E96AA);
+}
+
++ (UIColor *) ht_acquaColor
+{
+    return UIColorFromRGB(0x1C9BA8);
+}
+
++ (UIColor *) ht_acquaDarkColor
+{
+    return UIColorFromRGB(0x167882);
+}
+
++ (UIColor *) ht_greyColor
+{
+    return UIColorFromRGB(0x858686);
+}
+
++ (UIColor *) ht_greyDarkColor
+{
+    return UIColorFromRGB(0x545555);
+}
+
+
+
 
 
 @end

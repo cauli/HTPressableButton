@@ -48,6 +48,12 @@
     [self createButton];
 }
 
+- (void) setInverted:(BOOL)inverted
+{
+    _inverted = inverted;
+    [self createButton];
+}
+
 - (void) setButtonColor:(UIColor *)buttonColor
 {
     _buttonColor = buttonColor;
@@ -189,7 +195,6 @@
             [super setTitleEdgeInsets:UIEdgeInsetsMake(_myTitleInsets.top, _myTitleInsets.left, -(_shadowHeight * HTShadowOffsetWhenPressed), _myTitleInsets.right)];
             [super setImageEdgeInsets:UIEdgeInsetsMake(_myImageInsets.top, _myImageInsets.left, -(_shadowHeight * HTImageOffsetWhenPressed), _myImageInsets.right)];
         }
-        
     }
     else
     {
@@ -226,7 +231,8 @@
                                             shadowHeight:_shadowHeight
                                              shadowColor:[self disabledShadowColorOrDefault]
                                             cornerRadius:_cornerRadius
-                                                    glow:[self glowOrDefault]];
+                                                    glow:[self glowOrDefault]
+                                                inverted:_inverted];
         }
 
         [self setBackgroundImage:buttonDisabled forState:UIControlStateDisabled];
@@ -269,14 +275,16 @@
                                       shadowHeight:_shadowHeight
                                        shadowColor:[self shadowColorOrDefault]
                                       cornerRadius:_cornerRadius
-                                              glow:[self glowOrDefault]];
+                                              glow:[self glowOrDefault]
+                                          inverted:_inverted];
         
         buttonHighlighted = [UIImage ht_buttonWithHighlightedColor:[self buttonColorOrDefault]
                                                               size:self.frame.size
                                                       shadowHeight:_shadowHeight
                                                        shadowColor:[self shadowColorOrDefault]
                                                       cornerRadius:_cornerRadius
-                                                               glow:[self glowOrDefault]];
+                                                               glow:[self glowOrDefault]
+                                                            inverted:_inverted];
     }
       
     [self setBackgroundImage:buttonNormal forState:UIControlStateNormal];

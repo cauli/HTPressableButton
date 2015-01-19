@@ -17,6 +17,7 @@
                      shadowColor: (UIColor *) shadowColor
                     cornerRadius: (CGFloat) cornerRadius
                             glow: (BOOL) glow
+                        inverted: (BOOL) inverted
 {
     UIImage *frontImage;
     UIImage *buttonImage;
@@ -39,7 +40,13 @@
     
     //Draw button's shadow first (behind) a little lower
     UIGraphicsBeginImageContextWithOptions(rect.size, NO, 0);
-    [backImage drawAtPoint:CGPointMake(0, shadowHeight)];
+    
+    // Only draws shadow on normal state if not inverted
+    if(!inverted)
+    {
+        [backImage drawAtPoint:CGPointMake(0, shadowHeight)];
+    }
+    
     [frontImage drawAtPoint:CGPointMake(0, 0)];
     buttonImage = UIGraphicsGetImageFromCurrentImageContext();
     UIGraphicsEndImageContext();
@@ -53,6 +60,7 @@
                                 shadowColor: (UIColor *) shadowColor
                                cornerRadius: (CGFloat) cornerRadius
                                        glow: (BOOL) glow
+                                   inverted: (BOOL) inverted
 {
     UIImage *buttonHighlightedImage;
     
@@ -77,7 +85,17 @@
     
     //Button's shadow stays at the same place but the button is moved a little down (shadowOffsetWhenPressed) in highlighted state
     UIGraphicsBeginImageContextWithOptions(rect.size, NO, 0);
-    [backImage drawAtPoint:CGPointMake(0, shadowHeight)];
+    
+    if(!inverted)
+    {
+        [backImage drawAtPoint:CGPointMake(0, shadowHeight)];
+    }
+    else
+    {
+        [backImage drawAtPoint:CGPointMake(0, 0)];
+    }
+    
+
     [frontImage drawAtPoint:CGPointMake(0, shadowHeight * HTShadowOffsetWhenPressed)];
     buttonHighlightedImage = UIGraphicsGetImageFromCurrentImageContext();
     UIGraphicsGetImageFromCurrentImageContext();

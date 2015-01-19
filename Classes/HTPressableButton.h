@@ -70,10 +70,14 @@ typedef NS_ENUM(NSInteger, HTPressableButtonStyle) {
 @property(nonatomic) BOOL glow UI_APPEARANCE_SELECTOR;
 
 /**
+ Button pops out when touched instead of popping in
+ */
+@property(nonatomic) BOOL inverted UI_APPEARANCE_SELECTOR;
+
+/**
  Buffer for the image UIEdgeInsets grabbed from the storyboard
  */
 @property(nonatomic) UIEdgeInsets myImageInsets UI_APPEARANCE_SELECTOR;
-
 
 /**
  Buffer for the text UIEdgeInsets grabbed from the storyboard
@@ -111,6 +115,12 @@ typedef NS_ENUM(NSInteger, HTPressableButtonStyle) {
  @param buttonColor The fill color to be used by the button
  */
 - (void) setButtonColor:(UIColor *)buttonColor;
+
+/**
+ Sets the button to inverted or not
+ @param inverted Is inverted?
+ */
+- (void) setButtonInverted:(BOOL)inverted;
 
 /**
  Set the button's shadow color

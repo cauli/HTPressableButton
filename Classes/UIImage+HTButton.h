@@ -22,13 +22,15 @@
  @param shadowColor The background color of the shadow
  @param cornerRadius The corner radius of the button
  @param glow If we should apply a triangular glow to the button
+ @param inverted Is button inverted?
  */
 + (UIImage *) ht_buttonWithColor: (UIColor *) buttonColor
                             size: (CGSize) size
                     shadowHeight: (CGFloat) shadowHeight
                      shadowColor: (UIColor *) shadowColor
                     cornerRadius: (CGFloat) cornerRadius
-                            glow: (BOOL) glow;
+                            glow: (BOOL) glow
+                        inverted: (BOOL) inverted;
 
 /**
  Create a composite image to be used as the highlighted state of a button
@@ -38,13 +40,15 @@
  @param shadowColor The background color of the shadow
  @param cornerRadius The corner radius of the button
  @param glow If we should apply a triangular glow to the button
+ @param inverted Is button inverted?
  */
 + (UIImage *) ht_buttonWithHighlightedColor: (UIColor *) buttonColor
                                        size: (CGSize) size
                                shadowHeight: (CGFloat) shadowHeight
                                 shadowColor: (UIColor *) shadowColor
                                cornerRadius: (CGFloat) cornerRadius
-                                        glow: (BOOL) glow;
+                                       glow: (BOOL) glow
+                                   inverted: (BOOL) inverted;
 
 /**
  Create a composite circular image to be used as the button background

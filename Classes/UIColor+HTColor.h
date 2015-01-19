@@ -88,5 +88,25 @@
 + (UIColor *) ht_goldenDarkColor;
 + (UIColor *) ht_mediumGreyColor;
 + (UIColor *) ht_mediumGreyDarkColor;
++ (UIColor *) ht_heartColor;
++ (UIColor *) ht_heartDarkColor;
++ (UIColor *) ht_burntOrangeColor;
++ (UIColor *) ht_burntOrangeDarkColor;
++ (UIColor *) ht_magentaColor;
++ (UIColor *) ht_magentaDarkColor;
++ (UIColor *) ht_rosyColor;
++ (UIColor *) ht_rosyDarkColor;
++ (UIColor *) ht_mintyColor;
++ (UIColor *) ht_mintyDarkColor;
++ (UIColor *) ht_orangeColor;
++ (UIColor *) ht_orangeDarkColor;
++ (UIColor *) ht_deathGreenColor;
++ (UIColor *) ht_deathGreenDarkColor;
++ (UIColor *) ht_twitterColor;
++ (UIColor *) ht_twitterDarkColor;
++ (UIColor *) ht_acquaColor;
++ (UIColor *) ht_acquaDarkColor;
++ (UIColor *) ht_greyColor;
++ (UIColor *) ht_greyDarkColor;
 
 @end
