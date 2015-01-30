@@ -19,7 +19,15 @@
 
 - (instancetype) initWithFrame:(CGRect)frame
 {
+    
+    
+    NSLog(@"Initted with glow: %d", _glow);
+    
+    NSLog(@"Initted with color palette : %@", _colorPalette);
+    
     return [self initWithFrame:frame buttonStyle:HTPressableButtonStyleRounded];
+    
+    
 }
 
 - (instancetype) initWithFrame:(CGRect)frame buttonStyle:(HTPressableButtonStyle)style
@@ -30,46 +38,60 @@
         [self setDefaultShadowHeightForStyle:style];
         [self setStyle:style];
     }
+    
+    NSLog(@"Initted with glow: %d", _glow);
+    
+    NSLog(@"Initted with color palette : %@", _colorPalette);
+    
     return self;
 }
+
+
+
+- (void)awakeFromNib {
+    NSLog(@"Initted with glow: %d", _glow);
+    
+    NSLog(@"Initted with color palette : %@", _colorPalette);
+    
+    [self createButton];
+    
+    return;
+}
+
+
+
 
 #pragma mark - Set Button Style
 
 - (void) setColorPalette:(NSString*)colorPalette
 {
     _colorPalette = colorPalette;
-    [self createButton];
+    
 }
-
 
 - (void) setGlow:(BOOL)glow
 {
     _glow = glow;
-    [self createButton];
 }
 
 - (void) setInverted:(BOOL)inverted
 {
     _inverted = inverted;
-    [self createButton];
 }
 
 - (void) setButtonColor:(UIColor *)buttonColor
 {
     _buttonColor = buttonColor;
-    [self createButton];
 }
 
 - (void) setShadowColor:(UIColor *)shadowColor
 {
     _shadowColor = shadowColor;
-    [self createButton];
 }
 
 - (void) setShadowHeight:(CGFloat)shadowHeight
 {
     _shadowHeight = shadowHeight;
-    [self createButton];
 }
 
 - (void) setStyle:(HTPressableButtonStyle) style
@@ -91,19 +113,16 @@
             _cornerRadius = 4.0;
             break;
     }
-    [self createButton];
 }
 
 - (void) setDisabledButtonColor:(UIColor *)disabledButtonColor
 {
     _disabledButtonColor = disabledButtonColor;
-    [self createButton];
 }
 
 - (void) setDisabledShadowColor:(UIColor *)disabledShadowColor
 {
     _disabledShadowColor = disabledShadowColor;
-    [self createButton];
 }
 
 #pragma mark - Set Button Default Style
