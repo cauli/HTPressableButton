@@ -24,7 +24,7 @@
 
 - (instancetype) initWithFrame:(CGRect)frame buttonStyle:(HTPressableButtonStyle)style
 {
-    
+
     if (self = [super initWithFrame:frame])
     {
         [self setDefaultShadowHeightForStyle:style];
@@ -75,10 +75,10 @@
 - (void) setStyle:(HTPressableButtonStyle) style
 {
     _style = style;
-    
+
     switch (style) {
         case HTPressableButtonStyleRect:
-            _cornerRadius = 0.0;
+            _cornerRadius = 4.0;
             break;
         case HTPressableButtonStyleRounded:
             _cornerRadius = 10.0;
@@ -88,7 +88,7 @@
             self.clipsToBounds = YES;
             break;
         default:
-            _cornerRadius = 0.0;
+            _cornerRadius = 4.0;
             break;
     }
     [self createButton];
@@ -269,6 +269,16 @@
     }
     else
     {
+        // FIXME Sorry, hardcoded!
+        if(_inverted)
+        {
+            _cornerRadius = 0.0;
+        }
+        else
+        {
+            _cornerRadius = 4.0;
+        }
+
         // Rectangular or rounded-corner buttons
         buttonNormal = [UIImage ht_buttonWithColor:[self buttonColorOrDefault]
                                               size:self.frame.size
