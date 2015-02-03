@@ -151,7 +151,7 @@ typedef NS_ENUM(NSInteger, HTPressableButtonStyle) {
  */
 - (BOOL) glowOrDefault;
 
-
+- (void) btnClick;
 /**
  Set the button style
  

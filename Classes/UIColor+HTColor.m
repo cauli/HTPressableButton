@@ -459,6 +459,15 @@
     return UIColorFromRGB(0x545555);
 }
 
++ (UIColor *) ht_whiteColor
+{
+    return UIColorFromRGB(0xFFFFFF);
+}
+
++ (UIColor *) ht_whiteDarkColor
+{
+    return UIColorFromRGB(0xA8A8A6);
+}
 
 
 

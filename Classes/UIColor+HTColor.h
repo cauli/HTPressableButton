@@ -108,5 +108,7 @@
 + (UIColor *) ht_acquaDarkColor;
 + (UIColor *) ht_greyColor;
 + (UIColor *) ht_greyDarkColor;
++ (UIColor *) ht_whiteColor;
++ (UIColor *) ht_whiteDarkColor;
 
 @end

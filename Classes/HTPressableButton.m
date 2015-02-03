@@ -19,12 +19,6 @@
 
 - (instancetype) initWithFrame:(CGRect)frame
 {
-    
-    
-    NSLog(@"Initted with glow: %d", _glow);
-    
-    NSLog(@"Initted with color palette : %@", _colorPalette);
-    
     return [self initWithFrame:frame buttonStyle:HTPressableButtonStyleRounded];
     
     
@@ -32,27 +26,18 @@
 
 - (instancetype) initWithFrame:(CGRect)frame buttonStyle:(HTPressableButtonStyle)style
 {
-
     if (self = [super initWithFrame:frame])
     {
         [self setDefaultShadowHeightForStyle:style];
         [self setStyle:style];
     }
-    
-    NSLog(@"Initted with glow: %d", _glow);
-    
-    NSLog(@"Initted with color palette : %@", _colorPalette);
-    
+
     return self;
 }
 
 
 
 - (void)awakeFromNib {
-    NSLog(@"Initted with glow: %d", _glow);
-    
-    NSLog(@"Initted with color palette : %@", _colorPalette);
-    
     [self createButton];
     
     return;
@@ -260,10 +245,23 @@
 }
 
 
+- (void) btnClick {
+    [self setUserInteractionEnabled:FALSE];
+    [NSTimer scheduledTimerWithTimeInterval:1 target:self selector:@selector(enableButton:) userInfo:nil repeats:NO];
+}
+
+- (void)enableButton:(NSTimer *)timer {
+    [self setUserInteractionEnabled:TRUE];
+}
+
 #pragma mark - Create Button
 
 - (void) createButton
 {
+    [self setUserInteractionEnabled:TRUE];
+    
+    [self addTarget:self action:@selector(btnClick) forControlEvents:UIControlEventTouchUpInside];
+    
     UIImage *buttonNormal;
     UIImage *buttonHighlighted;
     
