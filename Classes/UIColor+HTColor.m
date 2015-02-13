@@ -469,6 +469,16 @@
     return UIColorFromRGB(0xA8A8A6);
 }
 
++ (UIColor *) ht_redColor
+{
+    return UIColorFromRGB(0xF34547);
+}
+
++ (UIColor *) ht_redDarkColor
+{
+    return UIColorFromRGB(0xCD3D3E);
+}
+
 
 
 

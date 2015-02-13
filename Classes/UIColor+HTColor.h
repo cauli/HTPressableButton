@@ -110,5 +110,8 @@
 + (UIColor *) ht_greyDarkColor;
 + (UIColor *) ht_whiteColor;
 + (UIColor *) ht_whiteDarkColor;
++ (UIColor *) ht_redColor;
++ (UIColor *) ht_redDarkColor;
+
 
 @end
